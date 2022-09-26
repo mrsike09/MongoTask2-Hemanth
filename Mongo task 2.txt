@@ -1,0 +1,1084 @@
+By Hemanth A R
+
+Question 1:
+ db.restdata.find().pretty();
+{
+        "_id" : ObjectId("633124e6b1c0d629f3dad4d0"),
+        "address" : {
+                "building" : "1007",
+                "street" : "HighStreet",
+                "zipcode" : "TW31HA"
+        },
+        "borough" : "Hounslow",
+        "cuisine" : "Bakery",
+        "Orders" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "rating" : "A",
+                        "stars" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "rating" : "A",
+                        "stars" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "rating" : "A",
+                        "stars" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "rating" : "C",
+                        "stars" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "rating" : "B",
+                        "stars" : 14
+                }
+        ],
+        "name" : "Just Bake Shop",
+        "restaurant_id" : "5075445"
+}
+{
+        "_id" : ObjectId("6331255fb1c0d629f3dad4d1"),
+        "address" : {
+                "building" : "100",
+                "street" : "Street1",
+                "zipcode" : "500"
+        },
+        "borough" : "Bun",
+        "cuisine" : "Bakery",
+        "Orders" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "rating" : "A",
+                        "stars" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "rating" : "A",
+                        "stars" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "rating" : "A",
+                        "stars" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "rating" : "C",
+                        "stars" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "rating" : "B",
+                        "stars" : 14
+                }
+        ],
+        "name" : "Amma'sBakery",
+        "restaurant_id" : "123"
+}
+{
+        "_id" : ObjectId("633125b1b1c0d629f3dad4d2"),
+        "address" : {
+                "building" : "101",
+                "street" : "Street2",
+                "zipcode" : "501"
+        },
+        "borough" : "Bread",
+        "cuisine" : "Bakery",
+        "Orders" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "rating" : "A",
+                        "stars" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "rating" : "A",
+                        "stars" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "rating" : "A",
+                        "stars" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "rating" : "C",
+                        "stars" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "rating" : "B",
+                        "stars" : 14
+                }
+        ],
+        "name" : "LavensBakery",
+        "restaurant_id" : "1234"
+}
+{
+        "_id" : ObjectId("6331261db1c0d629f3dad4d3"),
+        "address" : {
+                "building" : "102",
+                "street" : "Street3",
+                "zipcode" : "502"
+        },
+        "borough" : "Biscuit",
+        "cuisine" : "Bakery",
+        "Orders" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "rating" : "A",
+                        "stars" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "rating" : "A",
+                        "stars" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "rating" : "A",
+                        "stars" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "rating" : "C",
+                        "stars" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "rating" : "B",
+                        "stars" : 14
+                }
+        ],
+        "name" : "GlensBakery",
+        "restaurant_id" : "12345"
+
+Question 2:
+
+db.restdata.find({},{"restaurant_id" : 1,"name":1,"borough":1,"address.zipcode" :1,"_id":0});
+{ "address" : { "zipcode" : "TW31HA" }, "borough" : "Hounslow", "name" : "Just Bake Shop", "restaurant_id" : "5075445" }
+{ "address" : { "zipcode" : "500" }, "borough" : "Bun", "name" : "Amma'sBakery", "restaurant_id" : "123" }
+{ "address" : { "zipcode" : "501" }, "borough" : "Bread", "name" : "LavensBakery", "restaurant_id" : "1234" }
+{ "address" : { "zipcode" : "502" }, "borough" : "Biscuit", "name" : "GlensBakery", "restaurant_id" : "12345" }
+
+Question 3:
+
+db.restdata.find({},{"restaurant_id":1, "name":1,"borough":1,"_id":0});
+{ "borough" : "Hounslow", "name" : "Just Bake Shop", "restaurant_id" : "5075445" }
+{ "borough" : "Bun", "name" : "Amma'sBakery", "restaurant_id" : "123" }
+{ "borough" : "Bread", "name" : "LavensBakery", "restaurant_id" : "1234" }
+{ "borough" : "Biscuit", "name" : "GlensBakery", "restaurant_id" : "12345" }
+
+Question 4:
+
+db.restdata.find({},{"restaurant_id":1, "name":1,"borough":1,"address.zipcode":1,"_id":0});
+{ "address" : { "zipcode" : "TW31HA" }, "borough" : "Hounslow", "name" : "Just Bake Shop", "restaurant_id" : "5075445" }
+{ "address" : { "zipcode" : "500" }, "borough" : "Bun", "name" : "Amma'sBakery", "restaurant_id" : "123" }
+{ "address" : { "zipcode" : "501" }, "borough" : "Bread", "name" : "LavensBakery", "restaurant_id" : "1234" }
+{ "address" : { "zipcode" : "502" }, "borough" : "Biscuit", "name" : "GlensBakery", "restaurant_id" : "12345" }
+
+Question 5:
+
+ db.restdata.find({"borough":"Hounslow"}).pretty();
+{
+        "_id" : ObjectId("633124e6b1c0d629f3dad4d0"),
+        "address" : {
+                "building" : "1007",
+                "street" : "HighStreet",
+                "zipcode" : "TW31HA"
+        },
+        "borough" : "Hounslow",
+        "cuisine" : "Bakery",
+        "Orders" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "rating" : "A",
+                        "stars" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "rating" : "A",
+                        "stars" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "rating" : "A",
+                        "stars" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "rating" : "C",
+                        "stars" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "rating" : "B",
+                        "stars" : 14
+                }
+        ],
+        "name" : "Just Bake Shop",
+        "restaurant_id" : "5075445"
+Question 6:
+ 
+db.restdata.find({"borough" : "Bronx"}).limit(5)
+{ "_id" : ObjectId("63312c52b1c0d629f3dad4d4"), "address" : { "building" : "1007", "coord" : [ -73.856077, 40.848447 ], "street" : "Morris Park Ave", "zipcode" : "10462" }, "borough" : "Bronx", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 2 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 14 } ], "name" : "Morris Park Bake Shop", "restaurant_id" : "30075445" }
+{ "_id" : ObjectId("63312f3db1c0d629f3dad4d5"), "address" : { "building" : "1007", "coord" : [ -73.856077, 40.848447 ], "street" : "Morris Park Ave", "zipcode" : "10462" }, "borough" : "Bronx", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 2 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 14 } ], "name" : "Morris Park Bake Shop", "restaurant_id" : "30075445" }
+{ "_id" : ObjectId("63312f73b1c0d629f3dad4d6"), "address" : { "building" : "1007", "coord" : [ -73.856077, 40.848447 ], "street" : "Morris Park Ave", "zipcode" : "10462" }, "borough" : "Bronx", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 2 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 104 } ], "name" : "Morris Park Bake Shop", "restaurant_id" : "30075445" }
+{ "_id" : ObjectId("6331308cb1c0d629f3dad4d7"), "address" : { "building" : "1007", "coord" : [ -73.856077, 40.848447 ], "street" : "Morris Park Ave", "zipcode" : "10462" }, "borough" : "Bronx", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 2 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 20 } ], "name" : "Morris Park Bake Shop", "restaurant_id" : "30075445" }
+
+Question 7:
+
+db.restdata.find({"borough" : "Bronx"}).skip(5).limit(5)
+
+
+Question 8:
+
+db.restdata.insertOne({   "address": {      "building": "1007",      "coord": [ -73.856077, 40.848447 ],      "street": "Morris Park Ave",      "zipcode": "10462"   },   "borough": "Bronx",   "cuisine": "Bakery",   "grades": [      { "date": { "$date": 1393804800000 }, "grade": "A", "score": 2 },      { "date": { "$date": 1378857600000 }, "grade": "A", "score": 6 },      { "date": { "$date": 1358985600000 }, "grade": "A", "score": 10 },      { "date": { "$date": 1322006400000 }, "grade": "A", "score": 9 },      { "date": { "$date": 1299715200000 }, "grade": "B", "score": 104 }   ],   "name": "Morris Park Bake Shop",   "restaurant_id": "30075445" })
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("63312f73b1c0d629f3dad4d6")
+
+
+db.restdata.find({grades : { $elemMatch:{"score":{$gt : 90}}}});
+{ "_id" : ObjectId("63312f73b1c0d629f3dad4d6"), "address" : { "building" : "1007", "coord" : [ -73.856077, 40.848447 ], "street" : "Morris Park Ave", "zipcode" : "10462" }, "borough" : "Bronx", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 2 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 104 } ], "name" : "Morris Park Bake Shop", "restaurant_id" : "30075445" }
+
+
+Question 9:
+
+db.restdata.find({grades : { $elemMatch:{"score":{$gt : 10 , $lt :70}}}});
+{ "_id" : ObjectId("63312c52b1c0d629f3dad4d4"), "address" : { "building" : "1007", "coord" : [ -73.856077, 40.848447 ], "street" : "Morris Park Ave", "zipcode" : "10462" }, "borough" : "Bronx", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 2 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 14 } ], "name" : "Morris Park Bake Shop", "restaurant_id" : "30075445" }
+{ "_id" : ObjectId("63312f3db1c0d629f3dad4d5"), "address" : { "building" : "1007", "coord" : [ -73.856077, 40.848447 ], "street" : "Morris Park Ave", "zipcode" : "10462" }, "borough" : "Bronx", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 2 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 14 } ], "name" : "Morris Park Bake Shop", "restaurant_id" : "30075445" }
+{ "_id" : ObjectId("6331308cb1c0d629f3dad4d7"), "address" : { "building" : "1007", "coord" : [ -73.856077, 40.848447 ], "street" : "Morris Park Ave", "zipcode" : "10462" }, "borough" : "Bronx", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 2 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 20 } ], "name" : "Morris Park Bake Shop", "restaurant_id" : "30075445" }
+
+Question 10:
+
+db.restdata.find({},{borough:"Huslow",name:1}).pretty();
+{
+        "_id" : ObjectId("633124e6b1c0d629f3dad4d0"),
+        "name" : "Just Bake Shop",
+        "borough" : "Huslow"
+}
+{
+        "_id" : ObjectId("6331255fb1c0d629f3dad4d1"),
+        "name" : "Amma'sBakery",
+        "borough" : "Huslow"
+}
+{
+        "_id" : ObjectId("633125b1b1c0d629f3dad4d2"),
+        "name" : "LavensBakery",
+        "borough" : "Huslow"
+}
+{
+        "_id" : ObjectId("6331261db1c0d629f3dad4d3"),
+        "name" : "GlensBakery",
+        "borough" : "Huslow"
+}
+{
+        "_id" : ObjectId("63312c52b1c0d629f3dad4d4"),
+        "name" : "Morris Park Bake Shop",
+        "borough" : "Huslow"
+}
+{
+        "_id" : ObjectId("63312f3db1c0d629f3dad4d5"),
+        "name" : "Morris Park Bake Shop",
+        "borough" : "Huslow"
+}
+{
+        "_id" : ObjectId("63312f73b1c0d629f3dad4d6"),
+        "name" : "Morris Park Bake Shop",
+        "borough" : "Huslow"
+}
+{
+        "_id" : ObjectId("6331308cb1c0d629f3dad4d7"),
+        "name" : "Morris Park Bake Shop",
+        "borough" : "Huslow"
+}
+
+Question 11:
+db.restdata.find({$and:[{cusine:{$ne:"American"}},{"grades.score:{$gt:70}}]});
+
+{ "_id" : ObjectId("63312f73b1c0d629f3dad4d6"), "address" : { "building" : "1007", "coord" : [ -73.856077, 40.848447 ], "street" : "Morris Park Ave", "zipcode" : "10462" }, "borough" : "Bronx", "cuisine" : "Bakery", "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 2 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 104 } ], "name" : "Morris Park Bake Shop", "restaurant_id" : "30075445" }
+
+Question 13:
+
+db.rest.find({$and : [{"cuisine" : {$ne : "American "}}, {"grades.grade" : "A"}, {"borough" : {$ne : "Brooklyn "}}]}).sort({cuisine : -1})
+
+Questin 14:
+ 
+db.restdata.find({"name" : { $regex: /^Amm.*/}}, {_id:0, restaurant_id:1, name:1, borough:1, cuisine:1})
+{ "borough" : "Bun", "cuisine" : "Bakery", "name" : "Amma'sBakery", "restaurant_id" : "123" }
+
+Question 15:
+ 
+db.restdata.find({"name" : { $regex: /.*ery$/}}, {_id:0, restaurant_id:1, name:1, borough:1, cuisine:1})
+{ "borough" : "Bun", "cuisine" : "Bakery", "name" : "Amma'sBakery", "restaurant_id" : "123" }
+{ "borough" : "Bread", "cuisine" : "Bakery", "name" : "LavensBakery", "restaurant_id" : "1234" }
+{ "borough" : "Biscuit", "cuisine" : "Bakery", "name" : "GlensBakery", "restaurant_id" : "12345" }
+
+Question 16:
+
+db.restdata.find({"name" : { $regex: /Reg/}}, {_id:0, restaurant_id:1, name:1, borough:1, cuisine:1})
+
+Question 17:
+
+db.restdata.find({borough: "Bronx", cuisine: {$in: ["American ","Chinese"]}}, {_id:0, restaurant_id:1, name:1, borough:1, cuisine:1})
+
+Question 18:
+
+db.restdata.find({$or: [{"borough": "Staten Island"}, {"borough": "Bronxor Brooklyn"}, {"borough": "Queens"}]}, {_id:0, restaurant_id:1, name:1, borough:1, cuisine:1})
+
+Question 19:
+ 
+db.restdata.find( {borough: {$nin: ["Staten Island","Queens","Bronx","Brooklyn"]}} , {_id:0, restaurant_db.restdata.find( {borough: {$nin: ["Staten Island","Queens","Bronx","Brooklyn"]}} , {_id:0, restaurant_id:1, name:1, borough:1, cuisine:1})
+{ "borough" : "Hounslow", "cuisine" : "Bakery", "name" : "Just Bake Shop", "restaurant_id" : "5075445" }
+{ "borough" : "Bun", "cuisine" : "Bakery", "name" : "Amma'sBakery", "restaurant_id" : "123" }
+{ "borough" : "Bread", "cuisine" : "Bakery", "name" : "LavensBakery", "restaurant_id" : "1234" }
+{ "borough" : "Biscuit", "cuisine" : "Bakery", "name" : "GlensBakery", "restaurant_id" : "12345" }
+
+Question 20:
+
+db.restdata.find({"grades.score": {$lte: 10}}, {_id:0, restaurant_id:1, name:1, borough:1, cuisine:1})
+{ "borough" : "Bronx", "cuisine" : "Bakery", "name" : "Morris Park Bake Shop", "restaurant_id" : "30075445" }
+{ "borough" : "Bronx", "cuisine" : "Bakery", "name" : "Morris Park Bake Shop", "restaurant_id" : "30075445" }
+{ "borough" : "Bronx", "cuisine" : "Bakery", "name" : "Morris Park Bake Shop", "restaurant_id" : "30075445" }
+{ "borough" : "Bronx", "cuisine" : "Bakery", "name" : "Morris Park Bake Shop", "restaurant_id" : "30075445" }
+
+Question 21:
+
+db.restdata.find({$nor: [{cuisine: {$in: ["American ","Chinese"]}},{name: /^Wil.*/}]},{_id:0, restaurant_id:1, name:1, borough:1, cuisine:1})
+
+Question 22:
+
+db.restdata.find({"grades" : {$elemMatch: {"date": ISODate("2014-08-11T00:00:00Z"), "grade":"A", "score":11}}}, {_id:0, restaurant_id:1, name:1, grades:1})
+
+Question 23:
+
+db.restdata.find({$and: [{"grades.1.grade":"A"}, {"grades.1.score": 9}, {"grades.1.date": ISODate("2014-08-11T00:00:00Z")}]},{_id:0, restaurant_id:1, name:1, grades:1}).pretty()
+
+Question 24:
+
+db.restdata.find({$and : [{"address.coord.1": {$gt : 42}},{"address.coord.1": {$lte : 52}}]}, {_id:0, restaurant_id:1, name:1, address:1})
+
+
+Question 25:
+ 
+db.restdata.find({},{_id:0, name:1}).sort( {name: 1})
+{ "name" : "Amma'sBakery" }
+{ "name" : "GlensBakery" }
+{ "name" : "Just Bake Shop" }
+{ "name" : "LavensBakery" }
+{ "name" : "Morris Park Bake Shop" }
+{ "name" : "Morris Park Bake Shop" }
+{ "name" : "Morris Park Bake Shop" }
+{ "name" : "Morris Park Bake Shop" }
+
+Question 26:
+
+db.restdata.find({},{_id:0, name:1}).sort( {name: -1})
+{ "name" : "Morris Park Bake Shop" }
+{ "name" : "Morris Park Bake Shop" }
+{ "name" : "Morris Park Bake Shop" }
+{ "name" : "Morris Park Bake Shop" }
+{ "name" : "LavensBakery" }
+{ "name" : "Just Bake Shop" }
+{ "name" : "GlensBakery" }
+{ "name" : "Amma'sBakery" }
+
+Question 27:
+ 
+db.restdata.find({}, {_id:0, cuisine:1, borough:1}).sort({cuisine: 1, borough: -1})
+{ "borough" : "Hounslow", "cuisine" : "Bakery" }
+{ "borough" : "Bun", "cuisine" : "Bakery" }
+{ "borough" : "Bronx", "cuisine" : "Bakery" }
+{ "borough" : "Bronx", "cuisine" : "Bakery" }
+{ "borough" : "Bronx", "cuisine" : "Bakery" }
+{ "borough" : "Bronx", "cuisine" : "Bakery" }
+{ "borough" : "Bread", "cuisine" : "Bakery" }
+{ "borough" : "Biscuit", "cuisine" : "Bakery" }
+
+
+Question 28:
+ 
+db.restdata.find({"address.street": {$regex: /Street/}}).pretty()
+{
+        "_id" : ObjectId("633124e6b1c0d629f3dad4d0"),
+        "address" : {
+                "building" : "1007",
+                "street" : "HighStreet",
+                "zipcode" : "TW31HA"
+        },
+        "borough" : "Hounslow",
+        "cuisine" : "Bakery",
+        "Orders" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "rating" : "A",
+                        "stars" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "rating" : "A",
+                        "stars" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "rating" : "A",
+                        "stars" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "rating" : "C",
+                        "stars" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "rating" : "B",
+                        "stars" : 14
+                }
+        ],
+        "name" : "Just Bake Shop",
+        "restaurant_id" : "5075445"
+}
+{
+        "_id" : ObjectId("6331255fb1c0d629f3dad4d1"),
+        "address" : {
+                "building" : "100",
+                "street" : "Street1",
+                "zipcode" : "500"
+        },
+        "borough" : "Bun",
+        "cuisine" : "Bakery",
+        "Orders" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "rating" : "A",
+                        "stars" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "rating" : "A",
+                        "stars" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "rating" : "A",
+                        "stars" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "rating" : "C",
+                        "stars" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "rating" : "B",
+                        "stars" : 14
+                }
+        ],
+        "name" : "Amma'sBakery",
+        "restaurant_id" : "123"
+}
+{
+        "_id" : ObjectId("633125b1b1c0d629f3dad4d2"),
+        "address" : {
+                "building" : "101",
+                "street" : "Street2",
+                "zipcode" : "501"
+        },
+        "borough" : "Bread",
+        "cuisine" : "Bakery",
+        "Orders" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "rating" : "A",
+                        "stars" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "rating" : "A",
+                        "stars" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "rating" : "A",
+                        "stars" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "rating" : "C",
+                        "stars" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "rating" : "B",
+                        "stars" : 14
+                }
+        ],
+        "name" : "LavensBakery",
+        "restaurant_id" : "1234"
+}
+{
+        "_id" : ObjectId("6331261db1c0d629f3dad4d3"),
+        "address" : {
+                "building" : "102",
+                "street" : "Street3",
+                "zipcode" : "502"
+        },
+        "borough" : "Biscuit",
+        "cuisine" : "Bakery",
+        "Orders" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "rating" : "A",
+                        "stars" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "rating" : "A",
+                        "stars" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "rating" : "A",
+                        "stars" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "rating" : "C",
+                        "stars" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "rating" : "B",
+                        "stars" : 14
+                }
+        ],
+        "name" : "GlensBakery",
+        "restaurant_id" : "12345"
+Question 28(2):
+
+db.restdata.find({"address.street": {$ne: {$regex: /Street/}}}).pretty()
+{
+        "_id" : ObjectId("633124e6b1c0d629f3dad4d0"),
+        "address" : {
+                "building" : "1007",
+                "street" : "HighStreet",
+                "zipcode" : "TW31HA"
+        },
+        "borough" : "Hounslow",
+        "cuisine" : "Bakery",
+        "Orders" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "rating" : "A",
+                        "stars" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "rating" : "A",
+                        "stars" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "rating" : "A",
+                        "stars" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "rating" : "C",
+                        "stars" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "rating" : "B",
+                        "stars" : 14
+                }
+        ],
+        "name" : "Just Bake Shop",
+        "restaurant_id" : "5075445"
+}
+{
+        "_id" : ObjectId("6331255fb1c0d629f3dad4d1"),
+        "address" : {
+                "building" : "100",
+                "street" : "Street1",
+                "zipcode" : "500"
+        },
+        "borough" : "Bun",
+        "cuisine" : "Bakery",
+        "Orders" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "rating" : "A",
+                        "stars" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "rating" : "A",
+                        "stars" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "rating" : "A",
+                        "stars" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "rating" : "C",
+                        "stars" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "rating" : "B",
+                        "stars" : 14
+                }
+        ],
+        "name" : "Amma'sBakery",
+        "restaurant_id" : "123"
+}
+{
+        "_id" : ObjectId("633125b1b1c0d629f3dad4d2"),
+        "address" : {
+                "building" : "101",
+                "street" : "Street2",
+                "zipcode" : "501"
+        },
+        "borough" : "Bread",
+        "cuisine" : "Bakery",
+        "Orders" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "rating" : "A",
+                        "stars" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "rating" : "A",
+                        "stars" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "rating" : "A",
+                        "stars" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "rating" : "C",
+                        "stars" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "rating" : "B",
+                        "stars" : 14
+                }
+        ],
+        "name" : "LavensBakery",
+        "restaurant_id" : "1234"
+}
+{
+        "_id" : ObjectId("6331261db1c0d629f3dad4d3"),
+        "address" : {
+                "building" : "102",
+                "street" : "Street3",
+                "zipcode" : "502"
+        },
+        "borough" : "Biscuit",
+        "cuisine" : "Bakery",
+        "Orders" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "rating" : "A",
+                        "stars" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "rating" : "A",
+                        "stars" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "rating" : "A",
+                        "stars" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "rating" : "C",
+                        "stars" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "rating" : "B",
+                        "stars" : 14
+                }
+        ],
+        "name" : "GlensBakery",
+        "restaurant_id" : "12345"
+}
+{
+        "_id" : ObjectId("63312c52b1c0d629f3dad4d4"),
+        "address" : {
+                "building" : "1007",
+                "coord" : [
+                        -73.856077,
+                        40.848447
+                ],
+                "street" : "Morris Park Ave",
+                "zipcode" : "10462"
+        },
+        "borough" : "Bronx",
+        "cuisine" : "Bakery",
+        "grades" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "grade" : "A",
+                        "score" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "grade" : "A",
+                        "score" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "grade" : "A",
+                        "score" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "grade" : "A",
+                        "score" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "grade" : "B",
+                        "score" : 14
+                }
+        ],
+        "name" : "Morris Park Bake Shop",
+        "restaurant_id" : "30075445"
+}
+{
+        "_id" : ObjectId("63312f3db1c0d629f3dad4d5"),
+        "address" : {
+                "building" : "1007",
+                "coord" : [
+                        -73.856077,
+                        40.848447
+                ],
+                "street" : "Morris Park Ave",
+                "zipcode" : "10462"
+        },
+        "borough" : "Bronx",
+        "cuisine" : "Bakery",
+        "grades" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "grade" : "A",
+                        "score" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "grade" : "A",
+                        "score" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "grade" : "A",
+                        "score" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "grade" : "A",
+                        "score" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "grade" : "B",
+                        "score" : 14
+                }
+        ],
+        "name" : "Morris Park Bake Shop",
+        "restaurant_id" : "30075445"
+}
+{
+        "_id" : ObjectId("63312f73b1c0d629f3dad4d6"),
+        "address" : {
+                "building" : "1007",
+                "coord" : [
+                        -73.856077,
+                        40.848447
+                ],
+                "street" : "Morris Park Ave",
+                "zipcode" : "10462"
+        },
+        "borough" : "Bronx",
+        "cuisine" : "Bakery",
+        "grades" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "grade" : "A",
+                        "score" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "grade" : "A",
+                        "score" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "grade" : "A",
+                        "score" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "grade" : "A",
+                        "score" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "grade" : "B",
+                        "score" : 104
+                }
+        ],
+        "name" : "Morris Park Bake Shop",
+        "restaurant_id" : "30075445"
+}
+{
+        "_id" : ObjectId("6331308cb1c0d629f3dad4d7"),
+        "address" : {
+                "building" : "1007",
+                "coord" : [
+                        -73.856077,
+                        40.848447
+                ],
+                "street" : "Morris Park Ave",
+                "zipcode" : "10462"
+        },
+        "borough" : "Bronx",
+        "cuisine" : "Bakery",
+        "grades" : [
+                {
+                        "date" : {
+                                "$date" : 1393804800000
+                        },
+                        "grade" : "A",
+                        "score" : 2
+                },
+                {
+                        "date" : {
+                                "$date" : 1378857600000
+                        },
+                        "grade" : "A",
+                        "score" : 6
+                },
+                {
+                        "date" : {
+                                "$date" : 1358985600000
+                        },
+                        "grade" : "A",
+                        "score" : 10
+                },
+                {
+                        "date" : {
+                                "$date" : 1322006400000
+                        },
+                        "grade" : "A",
+                        "score" : 9
+                },
+                {
+                        "date" : {
+                                "$date" : 1299715200000
+                        },
+                        "grade" : "B",
+                        "score" : 20
+                }
+        ],
+        "name" : "Morris Park Bake Shop",
+        "restaurant_id" : "30075445"
+}
+
+Question 29:
+ 
+db.restdata.find({"address.coord": {$type: "double"}}, {_id:0, address:1})
+{ "address" : { "building" : "1007", "coord" : [ -73.856077, 40.848447 ], "street" : "Morris Park Ave", "zipcode" : "10462" } }
+{ "address" : { "building" : "1007", "coord" : [ -73.856077, 40.848447 ], "street" : "Morris Park Ave", "zipcode" : "10462" } }
+{ "address" : { "building" : "1007", "coord" : [ -73.856077, 40.848447 ], "street" : "Morris Park Ave", "zipcode" : "10462" } }
+{ "address" : { "building" : "1007", "coord" : [ -73.856077, 40.848447 ], "street" : "Morris Park Ave", "zipcode" : "10462" } }
+
+Question 30:
+
+db.restdata.find({"grades": {$elemMatch: {"score": {$mod: [7,0]}}}},{_id:0, restaurant_id:1, name:1, grades:1})
+{ "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 2 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 14 } ], "name" : "Morris Park Bake Shop", "restaurant_id" : "30075445" }
+{ "grades" : [ { "date" : { "$date" : 1393804800000 }, "grade" : "A", "score" : 2 }, { "date" : { "$date" : 1378857600000 }, "grade" : "A", "score" : 6 }, { "date" : { "$date" : 1358985600000 }, "grade" : "A", "score" : 10 }, { "date" : { "$date" : 1322006400000 }, "grade" : "A", "score" : 9 }, { "date" : { "$date" : 1299715200000 }, "grade" : "B", "score" : 14 } ], "name" : "Morris Park Bake Shop", "restaurant_id" : "30075445" }
+
+Question 31:
+db.restdata.find({name: {$regex: /mon/}},{_id:0, name:1, borough:1, "address.coord":1, cuisine:1})
+
+Question 32:
+
+db.restdata.find({name: {$regex: /^Mad.*/}},{_id:0, name:1, borough:1, "address.coord":1, cuisine:1})
